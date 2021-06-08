@@ -1,0 +1,1050 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/FixOnt#"
+     xml:base="http://www.semanticweb.org/FixOnt"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/FixOnt">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/FixOnt/FO1.3"/>
+        <rdfs:comment>An ontology that classifies workholding fixture components as required for the creation of fixture devices for machining, assembly, inspection, ...
+This is a basic classification based partially on the classifications presented in [1] and [2] that can be extended as needed. To allow for a general applicability primitive classes are used instead of defined classes. To allow for proper reasoning, the classes should be defined by the user/developer. 
+
+[1] Hoffman, E. G.: Jig and fixture design. 5. ed. Clifton Park: Thomson 2004. 
+[2] Bi, Z.; Zhang, W.: Flexible fixture design and automation: review, issues and future directions. International Journal of Production Research 39 (2001) 13, p. 2867-2894.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#hasFixtureComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/FixOnt#hasFixtureComponent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/FixOnt#isFixtureComponentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#hasJawShape -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/FixOnt#hasJawShape">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/FixOnt#Jaw"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#hasMountingPattern -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/FixOnt#hasMountingPattern">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/FixOnt#MountingPattern"/>
+        <rdfs:comment>Some modular fixture components are based on base-units and fasteners that follow a certain geometric mounting pattern. Functional property as every fixture component can only have one mounting pattern (no exceptions known to the author).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#isFixtureComponentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/FixOnt#isFixtureComponentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#isUsedInProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/FixOnt#isUsedInProcess">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/FixOnt#ManufacturingProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#AngledToolingPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#AngledToolingPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolingPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#AssemblyFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#AssemblyFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#isUsedInProcess"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#AssemblyProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A fixture used for assembly processes.</rdfs:comment>
+        <rdfs:comment>Link to process is missing, e.g. usedInProcess some AssemblyProcess.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#AssemblyProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#AssemblyProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ManufacturingProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#BuiltUpToolBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#BuiltUpToolBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#CamActionClamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#CamActionClamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Clamp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#CastToolBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#CastToolBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#CenteringVise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#CenteringVise">
+        <rdfs:comment>A vise-type fixture that has two powered clamping jaws that press against or pull apart from each other such that the workpiece is always in the center of the vise.</rdfs:comment>
+        <rdfs:comment>In this class definition no locating vise jaw is allowed. However, one of the jaws or both need to be used for locating. An additional subclass of ViseJaw that represents non-powered jaws could be used instead.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ChuckBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ChuckBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#SingleStructureBase"/>
+        <rdfs:comment>The single structure flexible fixture base for a chuck (lathe).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ChuckJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ChuckJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Jaw"/>
+        <rdfs:comment>Fixture jaw used in a chuck, e.g. three- or four-jaw chucks used for workholding in lathe machining.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#Clamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#Clamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:comment>A fixture unit that clamps a workpiece by excerting a clamping force. The unit is in contact with the geometric entities (surface, line, point) of the workpiece that are used for clamping.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ClampingViseJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ClampingViseJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ViseJaw"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ConcaveChuckJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ConcaveChuckJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ChuckJaw"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ConvexChuckJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ConvexChuckJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ChuckJaw"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#DedicatedFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#DedicatedFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/FixOnt#FlexibleFixture"/>
+        <rdfs:comment>A dedicated fixture built to hold one specific workpiece and not able to adapt to another workpiece shape (topology/dimensions). Independent of use (machining, assembly, ...)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#DedicatedMountingPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#DedicatedMountingPattern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#MountingPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#DoubleActingVise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#DoubleActingVise">
+        <rdfs:comment>A vise-type fixture that has two powered clamping jaws that press against or pull away from a central stationary locating jaw. Used to hold two workpieces simultaneously.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#DowelPinModularFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#DowelPinModularFixture">
+        <rdfs:comment>A modular flexible fixture where the base-unit has a dowel-pin pattern to position and fasten the components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#Fastener -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#Fastener">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:comment>A fixture unit that connects or aligns fixture components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#Fixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#Fixture">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Superclass of all fixture types</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FixtureBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FixtureBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:comment>The basis of each fixture is a fixture body on which the other fixture components are asembled/fastened. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FixtureComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FixtureComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#isFixtureComponentOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Superclass of all fixture components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FlexViseBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FlexViseBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ViseBase"/>
+        <rdfs:comment>Base units for a specific singel-acting vise-type fixture, the FlexibleVise. Includes one stationary jaw mount and one moveable jaw mount as well as pneumatic drvies, sensors and fasteners, i.e. all components that are not reconfigurable to adapt the device to a different workpiece geometry.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FlexViseJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FlexViseJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ViseJaw"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#isFixtureComponentOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#FlexibleVise"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FlexibleFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FlexibleFixture">
+        <rdfs:comment>A fixture that can adapted itself or can be adpted/reconfigured to hold different workpiece shapes or variants of a workpiece shape. Independent of use (machining, assembly, ...)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FlexibleFixtureBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FlexibleFixtureBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureBody"/>
+        <rdfs:comment>Fixture body of a flexible fixture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FlexibleVise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FlexibleVise">
+        <rdfs:comment>A certain type of single acting vise consisting of a FlexibleVise rail, a FlexibleVise stationary jaw mount, a pneumatically-powered FlexibleVise moveable jaw mount and two FlexibleVise jaws, one for locating the workpiece and one for clamping. 
+Versions of the FlexibleVise, e.g. multiple instances or different geometric variations, are possible.</rdfs:comment>
+        <rdfs:comment>Maybe include in definition that one jaw has to be a LocatingJaw and one a ClampingJaw. Does that require 4 jaws or is a jaw individual that is both FlexViseJaw and LocatingJaw sufficient to meet both conditions? However, this is included already via the SubClass Of description, as a SingleActingVise requires one ClampingJaw and one LocatingJaw .</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FourSidedVerticalToolingBlock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#FourSidedVerticalToolingBlock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolingBlock"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#GridHoleModularFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#GridHoleModularFixture">
+        <rdfs:comment>A modular flexible fixture where the base-unit has a grid-hole pattern to position and fasten the components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#HorizontalToolingPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#HorizontalToolingPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolingPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#InspectionFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#InspectionFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#isUsedInProcess"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#InspectionProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A fixture used for inspection processes.</rdfs:comment>
+        <rdfs:comment>Link to process is missing, e.g. usedInProcess some InspectionProcess.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#InspectionProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#InspectionProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ManufacturingProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#Jaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#Jaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasJawShape"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Exchangeable fixture unit used for locating/supporting/clamping that is in contact with the workpiece.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#JawShape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#JawShape">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixDesignOnt#StepRestNegJawShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#CurvedJawShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#CustomJawShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#FlatJawShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#StepJawShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#StepRestPosJawShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#VJawShape"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#LocatingViseJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#LocatingViseJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ViseJaw"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#Locator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#Locator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:comment>A fixture unit that locates a workpiece and is, therefore, in contact with the geometric entities (surface, line, point) of the workpiece that are used for locating.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MachinedFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MachinedFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#DedicatedFixture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#MachinedToolBody"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A fixture created through machining (material removal).  </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MachinedToolBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MachinedToolBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MachiningFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MachiningFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Fixture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#isUsedInProcess"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#MachiningProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A fixture used for machining processes.</rdfs:comment>
+        <rdfs:comment>Link to process is missing, e.g. usedInProcess some MachiningProcess.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MachiningProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MachiningProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ManufacturingProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MagneticBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MagneticBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#SingleStructureBase"/>
+        <rdfs:comment>The single structure flexible fixture base for a magnetic fixture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MagneticChuck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MagneticChuck">
+        <rdfs:comment>A single structure-type fixture that uses a magnetic base, e.g. an electro-magnetic table, to hold magnetizable workpieces of arbitrary shape. Commonly a flat primary locating/supporting surface of the workpiece is required for contact with the table.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MagneticViseJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MagneticViseJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ViseJaw"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ManufacturingProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ManufacturingProcess"/>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ModularBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ModularBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FlexibleFixtureBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasMountingPattern"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#MountingPattern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The base-unit for a modular flexible fixture system, e.g. a T-slot plate or a grid-hole vertical block.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#MountingPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#MountingPattern">
+        <rdfs:comment>Common geometrical patterns used for modular fixture systems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ParallelLocator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ParallelLocator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Locator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PegLocator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PegLocator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Locator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PegSupport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PegSupport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PhaseChangeFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PhaseChangeFixture">
+        <rdfs:comment>A single structure-type fixture that uses a phase-changing material, e.g. an electro-rheological fluid or water, to hold workpieces of arbitrary shape.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PhaseChangingBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PhaseChangingBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#SingleStructureBase"/>
+        <rdfs:comment>The single structure flexible fixture base for a phase changing fixture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PinArrayViseJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PinArrayViseJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ViseJaw"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PinLocator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PinLocator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Locator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PinSupport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PinSupport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PinTypeFasteners -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PinTypeFasteners">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Fastener"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#PlateFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#PlateFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#DedicatedFixture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#RadialChuck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#RadialChuck">
+        <rdfs:comment>A single structure-type fixture used for radial clamping of rotationally symmetric workpieces. Commonly used for lathe machining. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ScrewClamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ScrewClamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Clamp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ScrewTypeFasteners -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ScrewTypeFasteners">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Fastener"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#SingleActingVise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#SingleActingVise">
+        <rdfs:comment>A vise-type fixture that has one moveable clamping jaw that excerts a clamping force and presses against or pulls away from a stationary locating jaw. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#SingleStructureBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#SingleStructureBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FlexibleFixtureBody"/>
+        <rdfs:comment>The base unit for a single structure flexible fixture, e.g. vacuum, magnetic or vise-type fixtures.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#SingleStructureFlexibleFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#SingleStructureFlexibleFixture">
+        <rdfs:comment>A flexible fixture that is not based on modular exchangable components but on a single structure base unit that allow for adaption or configuration.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#StrapClamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#StrapClamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Clamp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#Support -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#Support">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+        <rdfs:comment>A fixture unit that supports a workpiece and is, therefore, in contact with the geometric entities (surface, line, point) of the workpiece that are used for supporting.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#TSlotModularFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#TSlotModularFixture">
+        <rdfs:comment>A modular flexible fixture where the base-unit has a T-slot pattern to position and fasten the components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ToggleActionClamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ToggleActionClamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Clamp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ToolBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ToolBody"/>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ToolingBlock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ToolingBlock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ModularBase"/>
+        <rdfs:comment>A block or tower that allows for multi-sided fixture assembly. Single-sided modular bases are considered angled plates and are in the ToolingPlate class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ToolingPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ToolingPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ModularBase"/>
+        <rdfs:comment>Single-sided modular fixture base, either horizontal or angled or vertical.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#TwoSidedVerticalToolingBlock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#TwoSidedVerticalToolingBlock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolingBlock"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#VBlockLocator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#VBlockLocator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Locator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#VacuumBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#VacuumBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#SingleStructureBase"/>
+        <rdfs:comment>The single structure flexible fixture base for a vacuum fixture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#VacuumChuck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#VacuumChuck"/>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#VerticalToolingPlate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#VerticalToolingPlate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolingPlate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ViseBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ViseBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#SingleStructureBase"/>
+        <rdfs:comment>The single structure flexible fixture base for a vise-type fixture. In this classification this includes all non-reconfigurable parts of a vise, such as stationary (anvil) and moveable jaw mounts (slide) or power-drives for the moveable jaw mounts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ViseHeldFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ViseHeldFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#DedicatedFixture"/>
+        <rdfs:comment>A fixture held by a vise. The workpiece itself is not in contact with the vise but the fixture body is.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ViseJaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ViseJaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Jaw"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#isFixtureComponentOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#ViseTypeFixture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Fixture jaw used in a vise-type fixture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ViseTypeFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ViseTypeFixture">
+        <rdfs:comment>A single structure-type fixture that has a vise base, e.g. a rail, but can be adapted to different clamping lengths and forces and can have modular exchangeable components, the vise jaws. 
+Although modular reconfiguration is possible with most vises, they are considered single structure flexible fixtures in this classification as they have one fixed base structure.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#WedgeClamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#WedgeClamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#Clamp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#WeldedFixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#WeldedFixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#DedicatedFixture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#WeldedToolBody"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A fixture created on a plate, e.g. by welding.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#WeldedToolBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#WeldedToolBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ToolBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#ZeroPointsRadialChuck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#ZeroPointsRadialChuck">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#RadialChuck"/>
+        <rdfs:comment>A radial chuck without jaws related to the Zero Points Clamping System.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#3JawChuckBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#3JawChuckBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ChuckBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#3JawRadialChuck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#3JawRadialChuck">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#RadialChuck"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#3JawChuckBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/FixOnt#ChuckJaw"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A radial chuck with three jaws and an according base unit, all of the jaws powered.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#4JawChuckBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#4JawChuckBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#ChuckBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#4JawRadialChuck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/FixOnt#4JawRadialChuck">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/FixOnt#RadialChuck"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/FixOnt#4JawChuckBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/FixOnt#hasFixtureComponent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/FixOnt#ChuckJaw"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A radial chuck with four jaws and an according base unit, all of the jaws powered.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/FixDesignOnt#StepRestNegJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixDesignOnt#StepRestNegJawShape"/>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#CurvedJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixOnt#CurvedJawShape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#CustomJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixOnt#CustomJawShape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#FlatJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixOnt#FlatJawShape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#StepJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixOnt#StepJawShape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#StepRestPosJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixOnt#StepRestPosJawShape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/FixOnt#VJawShape -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/FixOnt#VJawShape">
+        <rdf:type rdf:resource="http://www.semanticweb.org/FixOnt#JawShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#AssemblyFixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#InspectionFixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#MachiningFixture"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#Fastener"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#FixtureBody"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#Jaw"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#Locator"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#Fastener"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#FixtureBody"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#Support"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#Fixture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#FixtureComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/FixOnt#MountingPattern"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
