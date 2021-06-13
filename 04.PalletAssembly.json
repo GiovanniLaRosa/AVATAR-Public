@@ -1,95 +1,483 @@
-
 {
-    "context": {
-	 "UnitOfMeasureScale": 0.01,
-	 "Zup": false,
-	 "RepoPath": ""
-    },
-    "scene": [
-	 "Pallet Assembly",
-	 "TombstoneBlock",
-	 "Chucks",
-	 "Workpiece",
-	 "BasePlate01",
-	 "Rec_Jaw1",
-	 "Rec_Jaw2",
-	 "Rec_Jaw3",
-	 "Sup_Base1",
-	 "Sup_Base2",
-	 "Sup_Base3",
-	 "Nut","M16",
-	 "Nut","M16",
-	 "Cat_WIP1",
-	 "BasePlate02",
-	 "Rec_Jaw_11",
- 	 "Rec_Jaw_12",
-	 "Bracket_Setup1",
-	 "Bracket_Setup2",
-	 "Reference_Pin",
-	 "Bracket_Screw",
-	 "Bracket","Washer",
-	 "Hex_Nut_M8",
-	 "Indexing_Pin1",
-	 "Indexing_Pin2",
-	 "Sup_Base_11",
-	 "Sup_Base_12",
-	 "Sup_Base_13",
-	 "Cat_WIP2",
-	 "BasePlate03",
-	 "Rec_Jaw_21",
-	 "Rec_Jaw_22",
-	 "Rec_Jaw_23",
-	 "Nut_21",
- 	 "M16_21",
-	 "Nut_21",
-	 "M16_21",
-	 "Sup_Base_21",
-	 "Sup_Base_22",
-	 "Sup_Base_23"
-    ], 
-    "assets": [
-	 {"id": "Pallet Assembly", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb", "unit": "1"}]},
-	 {"id": "Tombstone Block", "type": "http://www.semanticweb.org/FixOnt#FourSidedVerticalToolingBlock", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Tombstone Block", "unit": "1"}]},
-	 {"id": "Chucks", "type": "http://www.semanticweb.org/FixOnt#ZeroPointsRadialChuck", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Chucks", "unit": "1"}]},
-	 {"id": "Workpiece", "type": "http://www.semanticweb.org/FixDesignOnt#Workpiece", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Workpiece", "unit": "1"}]},
-	 {"id": "BasePlate01", "type": "http://www.semanticweb.org/FixOnt#FixtureBody", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#BasePlate01", "unit": "1"}]},
-	 {"id": "Rec_Jaw1", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw1", "unit": "1"}]},
-	 {"id": "Rec_Jaw2", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw2", "unit": "1"}]},
-	 {"id": "Rec_Jaw3", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw3", "unit": "1"}]},
-	 {"id": "Sup_Base1", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base1", "unit": "1"}]},
-	 {"id": "Sup_Base2", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base2", "unit": "1"}]},
-	 {"id": "Sup_Base3", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base3", "unit": "1"}]},
-	 {"id": "Nut", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Nut", "unit": "1"}]},
-	 {"id": "M16", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#M16", "unit": "1"}]},
-	 {"id": "Nut", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Nut", "unit": "1"}]},
-	 {"id": "M16", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#M16", "unit": "1"}]},
-	 {"id": "Cat_WIP1", "type": "http://www.semanticweb.org/FixDesignOnt#Workpiece", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glbCat_WIP1", "unit": "1"}]},
-	 {"id": "BasePlate02", "type": "http://www.semanticweb.org/FixOnt#FixtureBody", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#BasePlate02", "unit": "1"}]},
-	 {"id": "Rec_Jaw_11", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw_11", "unit": "1"}]},
-	 {"id": "Rec_Jaw_12", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw_12", "unit": "1"}]},
-	 {"id": "Bracket_Setup1", "type": "http://www.semanticweb.org/FixOnt#ViseHeldFixture", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Bracket_Setup1", "unit": "1"}]},
-	 {"id": "Bracket_Setup2", "type": "http://www.semanticweb.org/FixOnt#ViseHeldFixture", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Bracket_Setup2", "unit": "1"}]},
-	 {"id": "Reference_Pin", "type": "http://www.semanticweb.org/FixOnt#PinLocator", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Reference_Pin", "unit": "1"}]},
-	 {"id": "Bracket_Screw", "type": "http://www.semanticweb.org/FixOnt#ScrewClamp", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Bracket_Screw", "unit": "1"}]},
-	 {"id": "Bracket", "type": "http://www.semanticweb.org/FixOnt#ViseHeldFixture", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Bracket", "unit": "1"}]},
-	 {"id": "Washer", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Washer", "unit": "1"}]},
-	 {"id": "Hex_Nut_M8", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Hex_Nut_M8", "unit": "1"}]},
-	 {"id": "Indexing_Pin1", "type": "http://www.semanticweb.org/FixOnt#PinTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Indexing_Pin1", "unit": "1"}]},
-	 {"id": "Indexing_Pin2", "type": "http://www.semanticweb.org/FixOnt#PinTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Indexing_Pin2", "unit": "1"}]},
-	 {"id": "Sup_Base_11", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base_11", "unit": "1"}]},
-	 {"id": "Sup_Base_12", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base_12", "unit": "1"}]},
-	 {"id": "Sup_Base_13", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base_13", "unit": "1"}]},
-	 {"id": "Cat_WIP2", "type": "http://www.semanticweb.org/FixDesignOnt#Workpiece", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Cat_WIP2", "unit": "1"}]},
-	 {"id": "BasePlate03", "type": "http://www.semanticweb.org/FixOnt#FixtureBody", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#BasePlate03", "unit": "1"}]},
-	 {"id": "Rec_Jaw_21", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw_21", "unit": "1"}]},
-	 {"id": "Rec_Jaw_22", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw_22", "unit": "1"}]},
-	 {"id": "Rec_Jaw_23", "type": "http://www.semanticweb.org/FixOnt#Jaw", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Rec_Jaw_23", "unit": "1"}]},
-	 {"id": "Nut_21", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Nut_21", "unit": "1"}]},
-	 {"id": "M16_21", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#M16_21", "unit": "1"}]},
-	 {"id": "Nut_21", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Nut_21", "unit": "1"}]},
-	 {"id": "M16_21", "type": "http://www.semanticweb.org/FixOnt#ScrewTypeFasteners", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#M16_21", "unit": "1"}]},
-	 {"id": "Sup_Base_21", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base_21", "unit": "1"}]},
-	 {"id": "Sup_Base_22", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base_22", "unit": "1"}]},
-	 {"id": "Sup_Base_23", "type": "http://www.semanticweb.org/FixOnt#Support", "representations": [{"file": "https://raw.githubusercontent.com/ak-asuthkar/Pallet-Assembly/main/Pallet%20Assembly_V5.glb#Sup_Base_23", "unit": "1"}]}
-    ]
+   "context":{
+      "UnitOfMeasureScale":0.01,
+      "Zup":false,
+      "RepoPath":""
+   },
+   "scene":[
+      "Pallet Assembly",
+      "Tombstone Block",
+      "Chucks",
+      "Workpiece",
+      "BasePlate01",
+      "Rec_Jaw1",
+      "Rec_Jaw2",
+      "Rec_Jaw3",
+      "Sup_Base1",
+      "Sup_Base2",
+      "Sup_Base3",
+      "Nut",
+      "M16",
+      "Nut",
+      "M16",
+      "Cat_WIP1",
+      "BasePlate02",
+      "Rec_Jaw_11",
+      "Rec_Jaw_12",
+      "Bracket_Setup1",
+      "Bracket_Setup2",
+      "Reference_Pin",
+      "Bracket_Screw",
+      "Bracket",
+      "Washer",
+      "Hex_Nut_M8",
+      "Indexing_Pin1",
+      "Indexing_Pin2",
+      "Sup_Base_11",
+      "Sup_Base_12",
+      "Sup_Base_13",
+      "Cat_WIP2",
+      "BasePlate03",
+      "Rec_Jaw_21",
+      "Rec_Jaw_22",
+      "Rec_Jaw_23",
+      "Nut_21",
+      "M16_21",
+      "Nut_21",
+      "M16_21",
+      "Sup_Base_21",
+      "Sup_Base_22",
+      "Sup_Base_23"
+   ],
+   "assets":[
+      {
+         "id":"Pallet Assembly",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Tombstone Block",
+         "type":"http://www.semanticweb.org/FixOnt#FourSidedVerticalToolingBlock",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Tombstone Block",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Chucks",
+         "type":"http://www.semanticweb.org/FixOnt#ZeroPointsRadialChuck",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Chucks",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Workpiece",
+         "type":"http://www.semanticweb.org/FixDesignOnt#Workpiece",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Workpiece",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"BasePlate01",
+         "type":"http://www.semanticweb.org/FixOnt#FixtureBody",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#BasePlate01",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw1",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw1",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw2",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw2",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw3",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw3",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base1",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base1",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base2",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base2",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base3",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base3",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Nut",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Nut",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"M16",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#M16",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Nut",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Nut",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"M16",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#M16",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Cat_WIP1",
+         "type":"http://www.semanticweb.org/FixDesignOnt#Workpiece",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Cat_WIP1",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"BasePlate02",
+         "type":"http://www.semanticweb.org/FixOnt#FixtureBody",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#BasePlate02",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw_11",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw_11",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw_12",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw_12",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Bracket_Setup1",
+         "type":"http://www.semanticweb.org/FixOnt#ViseHeldFixture",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Bracket_Setup1",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Bracket_Setup2",
+         "type":"http://www.semanticweb.org/FixOnt#ViseHeldFixture",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Bracket_Setup2",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Reference_Pin",
+         "type":"http://www.semanticweb.org/FixOnt#PinLocator",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Reference_Pin",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Bracket_Screw",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewClamp",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Bracket_Screw",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Bracket",
+         "type":"http://www.semanticweb.org/FixOnt#ViseHeldFixture",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Bracket",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Washer",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Washer",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Hex_Nut_M8",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Hex_Nut_M8",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Indexing_Pin1",
+         "type":"http://www.semanticweb.org/FixOnt#PinTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Indexing_Pin1",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Indexing_Pin2",
+         "type":"http://www.semanticweb.org/FixOnt#PinTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Indexing_Pin2",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base_11",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base_11",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base_12",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base_12",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base_13",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base_13",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Cat_WIP2",
+         "type":"http://www.semanticweb.org/FixDesignOnt#Workpiece",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Cat_WIP2",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"BasePlate03",
+         "type":"http://www.semanticweb.org/FixOnt#FixtureBody",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#BasePlate03",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw_21",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw_21",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw_22",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw_22",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Rec_Jaw_23",
+         "type":"http://www.semanticweb.org/FixOnt#Jaw",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Rec_Jaw_23",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Nut_21",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Nut_21",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"M16_21",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#M16_21",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Nut_21",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Nut_21",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"M16_21",
+         "type":"http://www.semanticweb.org/FixOnt#ScrewTypeFasteners",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#M16_21",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base_21",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base_21",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base_22",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base_22",
+               "unit":"1"
+            }
+         ]
+      },
+      {
+         "id":"Sup_Base_23",
+         "type":"http://www.semanticweb.org/FixOnt#Support",
+         "representations":[
+            {
+               "file":"https://raw.githubusercontent.com/GiovanniLaRosa/AVATAR-Public/main/02.PalletAssembly.glb#Sup_Base_23",
+               "unit":"1"
+            }
+         ]
+      }
+   ]
 }
